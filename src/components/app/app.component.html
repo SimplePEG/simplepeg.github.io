@@ -1,12 +1,13 @@
 <md-toolbar color="primary">
     <span class="title">SimplePEG</span>
     <nav>
-        <button md-button class="active">HOME</button>
-        <button md-button>PLAYGROUND</button>
-        <button md-button>GRAMMAR GALERRY</button>
-        <button md-button>DOCS</button>
+        <button md-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">HOME</button>
+        <button md-button routerLink="/playground" routerLinkActive="active">PLAYGROUND</button>
+        <button md-button routerLink="/grammar" routerLinkActive="active">GRAMMAR GALERRY</button>
+        <button md-button routerLink="/docs" routerLinkActive="active">DOCS</button>
     </nav>
 
     <span class="app-toolbar-filler"></span>
     <button (click)="goToGithubPage()" md-button><md-icon class="button-icon">public</md-icon>GitHub</button>
 </md-toolbar>
+<router-outlet></router-outlet>

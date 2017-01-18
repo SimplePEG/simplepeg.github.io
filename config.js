@@ -24,6 +24,7 @@ System.config({
         '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
         '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
         '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
+        '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
 
         'rxjs': 'npm:rxjs',
         'typescript': 'npm:typescript/lib/typescript.js'
