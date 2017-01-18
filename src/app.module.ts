@@ -5,6 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component'
 import { HomeComponent } from './components/home/home.component'
+import { PlaygroundComponent } from './components/playground/playground.component'
+import { GalleryComponent } from './components/gallery/gallery.component'
+import { DocComponent } from './components/doc/doc.component'
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'
 
 const appRoutes: Routes = [
@@ -12,6 +15,18 @@ const appRoutes: Routes = [
         path: '',
         pathMatch: 'full',
         component: HomeComponent
+    },
+    { 
+        path: 'playground',
+        component: PlaygroundComponent
+    },
+    { 
+        path: 'gallery',
+        component: GalleryComponent
+    },
+    { 
+        path: 'doc',
+        component: DocComponent
     },
     { path: '**', component: PageNotFoundComponent }
 ];
@@ -25,6 +40,9 @@ const appRoutes: Routes = [
 	declarations: [
         AppComponent,
         HomeComponent,
+        PlaygroundComponent,
+        GalleryComponent,
+        DocComponent,
         PageNotFoundComponent
     ],
 	bootstrap: [ AppComponent ]
