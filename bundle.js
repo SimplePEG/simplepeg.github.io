@@ -32531,7 +32531,7 @@ $__System.register("18", [], function (_export, _context) {
 
       _export("__useDefault", __useDefault);
 
-      _export("default", "<div>\n    <h2>Hello {{name}}</h2>\n</div>");
+      _export("default", "<div class=\"app\"> Hello AppComponent! </div>");
     }
   };
 });
@@ -32547,31 +32547,31 @@ $__System.register("19", ["3", "18"], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, app_html_text_1;
-    var App;
+    var core_1, app_component_html_text_1;
+    var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (app_html_text_1_1) {
-                app_html_text_1 = app_html_text_1_1;
+            function (app_component_html_text_1_1) {
+                app_component_html_text_1 = app_component_html_text_1_1;
             }],
         execute: function() {
-            App = (function () {
-                function App() {
-                    this.name = 'Angular X';
+            AppComponent = (function () {
+                function AppComponent() {
                 }
-                App = __decorate([
+                AppComponent.prototype.ngOnInit = function () { };
+                AppComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: app_html_text_1.default,
+                        selector: 'app',
+                        template: app_component_html_text_1.default
                     }), 
                     __metadata('design:paramtypes', [])
-                ], App);
-                return App;
+                ], AppComponent);
+                return AppComponent;
             }());
-            exports_1("App", App);
+            exports_1("AppComponent", AppComponent);
         }
     }
 });
@@ -32588,7 +32588,7 @@ $__System.register("1a", ["5", "3", "19"], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var platform_browser_1, core_1, app_1;
+    var platform_browser_1, core_1, app_component_1;
     var AppModule;
     return {
         setters:[
@@ -32598,8 +32598,8 @@ $__System.register("1a", ["5", "3", "19"], function(exports_1, context_1) {
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (app_1_1) {
-                app_1 = app_1_1;
+            function (app_component_1_1) {
+                app_component_1 = app_component_1_1;
             }],
         execute: function() {
             AppModule = (function () {
@@ -32608,8 +32608,8 @@ $__System.register("1a", ["5", "3", "19"], function(exports_1, context_1) {
                 AppModule = __decorate([
                     core_1.NgModule({
                         imports: [platform_browser_1.BrowserModule],
-                        declarations: [app_1.App],
-                        bootstrap: [app_1.App]
+                        declarations: [app_component_1.AppComponent],
+                        bootstrap: [app_component_1.AppComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppModule);
