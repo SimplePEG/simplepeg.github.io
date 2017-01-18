@@ -1,3 +1,19 @@
-.app {
+nav {
+    margin-left: 16px;
+}
 
+.title {
+    cursor: pointer;
+}
+
+.active {
+    background-color: red;
+}
+
+.app-toolbar-filler {
+    flex: 1 1 auto;
+}
+
+.button-icon {
+    margin-right: 8px;
 }
