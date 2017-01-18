@@ -29,6 +29,7 @@
     "@angular/forms": "*"
   },
   "devDependencies": {
-    "systemjs-builder": "^0.15.34"
+    "systemjs-builder": "^0.15.34",
+    "systemjs-plugin-text": "0.0.9"
   }
 }
