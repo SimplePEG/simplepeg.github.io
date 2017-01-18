@@ -1,0 +1,34 @@
+{
+  "name": "simplepeg.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimplePEG/simplepeg.github.io.git"
+  },
+  "author": "Ai_boy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SimplePEG/simplepeg.github.io/issues"
+  },
+  "homepage": "https://github.com/SimplePEG/simplepeg.github.io#readme",
+  "dependencies": {
+    "rxjs": "*",
+    "typescript": "2.0.2",
+    "@angular/core": "*",
+    "@angular/common": "*",
+    "@angular/compiler": "*",
+    "@angular/platform-browser": "*",
+    "@angular/platform-browser-dynamic": "*",
+    "@angular/http": "*",
+    "@angular/router": "*",
+    "@angular/forms": "*"
+  },
+  "devDependencies": {
+    "systemjs-builder": "^0.15.34"
+  }
+}
