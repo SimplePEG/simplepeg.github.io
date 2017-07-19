@@ -1,12 +1,16 @@
 <md-toolbar color="primary">
   <span>SimplePEG</span>
-  <span class="spacer"></span>
+  <span class="space"></span>
   <a md-button routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home</a>
   <!-- <a md-button routerLink="/quick-start">Quick Started</a> -->
   <a md-button routerLinkActive="active" routerLink="/languages">Languages</a>
   <!-- <a md-button routerLink="/visitors">Visitors</a> -->
   <!-- <a md-button routerLink="/documentation">Documentation</a> -->
   <a md-button routerLinkActive="active" routerLink="/playground">Playground</a>
+
+  <span class="spacer"></span>
+
+  <a md-button href="https://github.com/SimplePEG/SimplePEG">GitHub</a>
 </md-toolbar>
 
 <router-outlet></router-outlet>

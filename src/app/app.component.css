@@ -1,5 +1,9 @@
-.spacer {
+.space {
   width: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }
 
 .active {
