@@ -1,0 +1,8 @@
+:host {
+  display: flex;
+}
+
+.language {
+  margin: 30px;
+  flex: 1;
+}

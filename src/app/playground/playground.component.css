@@ -1,0 +1,34 @@
+.wrapper {
+  margin: 30px;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.wrapper md-card {
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+.editor {
+  width: 100%;
+  min-height: 200px;
+}
+
+.grammar {
+  flex: 1
+}
+
+.text {
+  flex: 1
+}
+
+.result {
+  width: 100%;
+}
+
+.error {
+  background: maroon;
+  color: white;
+  padding: 8px 16px;
+}
