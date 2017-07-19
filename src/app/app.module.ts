@@ -17,7 +17,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LanguagesService } from 'app/languages/languages.service';
 import { AceEditorModule } from 'ng2-ace-editor';
 
-import * as ace from 'brace';
+import 'brace';
 import 'brace/theme/github';
 import 'brace/mode/ruby';
 
