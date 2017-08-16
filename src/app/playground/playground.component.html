@@ -23,9 +23,11 @@
       <md-tab-group>
           <md-tab label="Result">
             <pre *ngIf="ast">{{ ast | json }}</pre>
+            <pre *ngIf="!ast">no result</pre>
           </md-tab>
           <md-tab label="Meta Info">
             <pre *ngIf="meta">{{ meta | json }}</pre>
+            <pre *ngIf="!meta">no meta info</pre>
           </md-tab>
       </md-tab-group>
     </md-card-content>
