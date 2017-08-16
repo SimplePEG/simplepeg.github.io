@@ -16,6 +16,7 @@ import { PlaygroundComponent } from './playground/playground.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LanguagesService } from 'app/languages/languages.service';
 import { AceEditorModule } from 'ng2-ace-editor';
+import { MdTabsModule } from '@angular/material';
 
 import 'brace';
 import 'brace/theme/github';
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
       appRoutes,  { useHash: true } // ,{ enableTracing: true }
     ),
     MdToolbarModule,
+    MdTabsModule,
     MdButtonModule,
     MdCardModule
   ],

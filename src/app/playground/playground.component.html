@@ -19,9 +19,15 @@
   </md-card>
 
   <md-card class="result">
-    <h4>Result</h4>
     <md-card-content>
-      <pre *ngIf="ast">{{ ast | json }}</pre>
+      <md-tab-group>
+          <md-tab label="Result">
+            <pre *ngIf="ast">{{ ast | json }}</pre>
+          </md-tab>
+          <md-tab label="Meta Info">
+            <pre *ngIf="meta">{{ meta | json }}</pre>
+          </md-tab>
+      </md-tab-group>
     </md-card-content>
   </md-card>
 

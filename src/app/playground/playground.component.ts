@@ -35,6 +35,7 @@ hash      ->  "#" [^ ]*;
   public textError = '';
 
   public ast: any;
+  public meta: any;
 
   public $grammar: Observer<string>;
   public $text: Observer<string>;
@@ -70,6 +71,7 @@ hash      ->  "#" [^ ]*;
           }
         });
         this.ast = null;
+        this.meta = null;
         this.grammar = grammar;
         this.grammarError = '';
         this.textError = '';
@@ -89,6 +91,7 @@ hash      ->  "#" [^ ]*;
            }
         });
         this.ast = null;
+        this.meta = null;
         this.text = text;
         this.textError = '';
         this.parseText(text);
@@ -109,6 +112,8 @@ hash      ->  "#" [^ ]*;
     } catch (e) {
       this.textError = e.message;
     }
+    this.meta = parser.state;
+    console.log(this.meta)
   }
 
   onGrammarChange(code) {
