@@ -1,7 +1,7 @@
 <div class="wrapper">
 
   <md-card class="grammar">
-    <h4>Grammar</h4>
+    <h4>Grammar</h4><i *ngIf="grammarError" class="material-icons">report_problem</i>
     <md-card-content>
       <div ace-editor class="editor"  [mode]="'ruby'" [text]="grammar" (textChanged)="onGrammarChange($event)">
       </div>
@@ -10,7 +10,7 @@
   </md-card>
 
   <md-card class="text">
-    <h4>Text</h4>
+    <h4>Text</h4><i *ngIf="textError" class="material-icons">report_problem</i>
     <md-card-content>
       <div ace-editor class="editor" [text]="text" (textChanged)="onTextChange($event)">
       </div>
@@ -21,7 +21,7 @@
   <md-card class="result">
     <h4>Result</h4>
     <md-card-content>
-      <pre>{{ ast | json }}</pre>
+      <pre *ngIf="ast">{{ ast | json }}</pre>
     </md-card-content>
   </md-card>
 

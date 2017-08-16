@@ -60,30 +60,37 @@ hash      ->  "#" [^ ]*;
     Observable.create((obs: Observer<string>) => this.$grammar = obs)
       .do((grammar: string) => {
         // block ui
-        this.grammarError = '';
       })
       .debounceTime(1000).subscribe((grammar: string) => {
+        console.log('grammar', grammar);
         this.router.navigate([], {
           queryParams: {
             g: encodeURIComponent(grammar),
             t: encodeURIComponent(this.text)
           }
         });
+        this.ast = null;
+        this.grammar = grammar;
+        this.grammarError = '';
+        this.textError = '';
         this.parseGrammar(grammar);
+        this.parseText(this.text);
       });
 
     Observable.create((obs) => this.$text = obs)
       .do(() => {
         // block ui
-        this.textError = '';
       })
-      .debounceTime(1000).subscribe((text: string) => {
+      .debounceTime(300).subscribe((text: string) => {
         this.router.navigate([], {
           queryParams: {
             g: encodeURIComponent(this.grammar),
             t: encodeURIComponent(text)
            }
         });
+        this.ast = null;
+        this.text = text;
+        this.textError = '';
         this.parseText(text);
       });
   }
