@@ -29,11 +29,12 @@ search    ->  ("?" [^ #]*)?;
 hash      ->  "#" [^ ]*;
   `;
   public text = 'https://simplepeg.github.io/';
-  public result = '';
+  public visitor = '';
 
   public grammarError = '';
   public textError = '';
 
+  public converted_ast: any;
   public ast: any;
   public meta: any;
 
@@ -122,6 +123,84 @@ hash      ->  "#" [^ ]*;
 
   onTextChange(code) {
     this.$text.next(code);
+  }
+
+  generateVisitor() {
+    if (!this.meta) {
+      alert('no parsed text');
+      return;
+    }
+    this.visitor =  '(function visitor() {\n  return {\n' + this.meta.rules.map((rule) =>
+      (`    ${rule.name}: function(node) {\n        return node;\n    }`)
+    ).join(',\n') +
+`,
+    type_string: function (node) {
+        return node;
+    },
+    type_regex_char: function (node) {
+        return node.match;
+    },
+    type_sequence: function (node) {
+        return node.match;
+    },
+    type_ordered_choice: function (node) {
+        return node;
+    },
+    type_zero_or_more: function (node) {
+        return node;
+    },
+    type_one_or_more: function (node) {
+        return node;
+    },
+    type_optional: function (node) {
+        return node;
+    },
+    type_and_predicate: function (node) {
+        return node;
+    },
+    type_not_predicate: function (node) {
+        return node;
+    },
+    type_end_of_file: function (node) {
+        return node;
+    },
+    type_rec: function (node) {
+        return node;
+    },
+    type_action: function (node) {
+        return node;
+    },
+    type_call_rule_by_name: function (node) {
+        return node;
+    }
+`
+    + '  }\n})';
+
+    this.visitAst();
+  }
+
+  visitAst() {
+    if (!this.ast) {
+      alert('No result to visit');
+      return;
+    }
+    let visitor = eval(this.visitor)();
+    this.converted_ast = this.visitNode(this.ast, visitor);
+  }
+
+  visitNode(node, visitor): any {
+    if (node.children) {
+      node.children = node.children.map((child) => this.visitNode(child, visitor));
+    }
+    if (node.rule && visitor[node.rule]) {
+      return visitor[node.rule](node);
+    } else {
+      if (node.type && visitor['type_' + node.type]) {
+        return visitor['type_' + node.type](node);
+      } else {
+        alert('cant find rule in visitor: ' + node.rule);
+      }
+    }
   }
 
 }

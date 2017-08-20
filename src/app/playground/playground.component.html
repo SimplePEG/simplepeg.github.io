@@ -3,8 +3,8 @@
   <md-card class="grammar">
     <h4>Grammar</h4><i *ngIf="grammarError" class="material-icons">report_problem</i>
     <md-card-content>
-      <div ace-editor class="editor"  [mode]="'ruby'" [text]="grammar" (textChanged)="onGrammarChange($event)">
-      </div>
+      <app-ace-editor class="editor"  [mode]="'ruby'" [text]="grammar" (textChanged)="onGrammarChange($event)">
+      </app-ace-editor>
     </md-card-content>
     <pre *ngIf="grammarError" class="error">{{ grammarError }}</pre>
   </md-card>
@@ -12,8 +12,8 @@
   <md-card class="text">
     <h4>Text</h4><i *ngIf="textError" class="material-icons">report_problem</i>
     <md-card-content>
-      <div ace-editor class="editor" [text]="text" (textChanged)="onTextChange($event)">
-      </div>
+      <app-ace-editor class="editor" [text]="text" (textChanged)="onTextChange($event)">
+      </app-ace-editor>
     </md-card-content>
     <pre *ngIf="textError" class="error">{{ textError }}</pre>
   </md-card>
@@ -28,6 +28,23 @@
           <md-tab label="Meta Info">
             <pre *ngIf="meta">{{ meta | json }}</pre>
             <pre *ngIf="!meta">no meta info</pre>
+          </md-tab>
+          <md-tab label="Visitor">
+            <div class="visitor">
+              <button md-raised-button (click)="generateVisitor()">Generate from grammar</button>
+              <app-ace-editor class="visitor-editor" [mode]="'javascript'" [text]="visitor" (textChanged)="onVisitorChange($event)">
+              </app-ace-editor>
+              <md-tab-group>
+                <md-tab label="Original Result">
+                  <pre *ngIf="ast">{{ ast | json }}</pre>
+                  <pre *ngIf="!ast">no result</pre>
+                </md-tab>
+                <md-tab label="Converted Result">
+                  <pre *ngIf="converted_ast">{{ converted_ast | json }}</pre>
+                  <pre *ngIf="!converted_ast">no converted result</pre>
+                </md-tab>
+              </md-tab-group>
+            </div>
           </md-tab>
       </md-tab-group>
     </md-card-content>
