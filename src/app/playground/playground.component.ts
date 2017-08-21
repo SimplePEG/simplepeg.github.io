@@ -132,49 +132,8 @@ hash      ->  "#" [^ ]*;
     }
     this.visitor =  '(function visitor() {\n  return {\n' + this.meta.rules.map((rule) =>
       (`    ${rule.name}: function(node) {\n        return node;\n    }`)
-    ).join(',\n') +
-`,
-    type_string: function (node) {
-        return node;
-    },
-    type_regex_char: function (node) {
-        return node.match;
-    },
-    type_sequence: function (node) {
-        return node.match;
-    },
-    type_ordered_choice: function (node) {
-        return node;
-    },
-    type_zero_or_more: function (node) {
-        return node;
-    },
-    type_one_or_more: function (node) {
-        return node;
-    },
-    type_optional: function (node) {
-        return node;
-    },
-    type_and_predicate: function (node) {
-        return node;
-    },
-    type_not_predicate: function (node) {
-        return node;
-    },
-    type_end_of_file: function (node) {
-        return node;
-    },
-    type_rec: function (node) {
-        return node;
-    },
-    type_action: function (node) {
-        return node;
-    },
-    type_call_rule_by_name: function (node) {
-        return node;
-    }
-`
-    + '  }\n})';
+     ).join(',\n')
+    + '\n  }\n})';
 
     this.visitAst();
   }
@@ -185,22 +144,22 @@ hash      ->  "#" [^ ]*;
       return;
     }
     let visitor = eval(this.visitor)();
-    this.converted_ast = this.visitNode(this.ast, visitor);
+    this.converted_ast = this.visitNode(JSON.parse(JSON.stringify(this.ast)), visitor);
   }
 
   visitNode(node, visitor): any {
     if (node.children) {
-      node.children = node.children.map((child) => this.visitNode(child, visitor));
+      node.children = node.children.map((child) => child && this.visitNode(child, visitor));
     }
     if (node.rule && visitor[node.rule]) {
       return visitor[node.rule](node);
-    } else {
-      if (node.type && visitor['type_' + node.type]) {
-        return visitor['type_' + node.type](node);
-      } else {
-        alert('cant find rule in visitor: ' + node.rule);
-      }
     }
+    return node;
+  }
+
+  onVisitorChange(code) {
+    this.visitor = code;
+    this.visitAst();
   }
 
 }

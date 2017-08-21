@@ -2,9 +2,15 @@
 # yarn lockfile v1
 
 
-"@angular/animations@^4.0.0":
-  version "4.3.0"
-  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/@angular/animations/-/animations-4.3.0.tgz#56f34b84649379202ac359929b82eb0b915e9c72"
+"@angular/animations@^4.3.0":
+  version "4.3.5"
+  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/@angular/animations/-/animations-4.3.5.tgz#85aa454c887cc7cce11637ea5f6e9afad88490e1"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/cdk@^2.0.0-beta.8":
+  version "2.0.0-beta.8"
+  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/@angular/cdk/-/cdk-2.0.0-beta.8.tgz#71961c851dfbeb19e085e898bf5e4461408f8b57"
   dependencies:
     tslib "^1.7.1"
 
@@ -114,6 +120,12 @@
   version "4.3.0"
   resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/@angular/language-service/-/language-service-4.3.0.tgz#ecea5f2812373c4c84e2199fca5ed8f6781ea0d6"
 
+"@angular/material@^2.0.0-beta.8":
+  version "2.0.0-beta.8"
+  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/@angular/material/-/material-2.0.0-beta.8.tgz#a92852abc9261aea26c2401f576645470be2cf38"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/platform-browser-dynamic@^4.0.0":
   version "4.3.0"
   resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.3.0.tgz#551fb18851b27ee8f3e4b0ee25aad10bd7b312e3"
@@ -177,6 +189,10 @@ accepts@1.3.3, accepts@~1.3.3:
   dependencies:
     mime-types "~2.1.11"
     negotiator "0.6.1"
+
+ace-builds@^1.2.5:
+  version "1.2.8"
+  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/ace-builds/-/ace-builds-1.2.8.tgz#062dc45772b00ece6a547a266a3081fe57591103"
 
 acorn-dynamic-import@^2.0.0:
   version "2.0.2"
@@ -604,6 +620,18 @@ brace-expansion@^1.1.7:
   dependencies:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
+
+brace@^0.10.0:
+  version "0.10.0"
+  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/brace/-/brace-0.10.0.tgz#edef4eb9b0928ba1ee5f717ffc157749a6dd5d76"
+  dependencies:
+    w3c-blob "0.0.1"
+
+brace@^0.9.0:
+  version "0.9.1"
+  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/brace/-/brace-0.9.1.tgz#19dcbae2faec9a9920a0452ec64d8d84df45e7b6"
+  dependencies:
+    w3c-blob "0.0.1"
 
 braces@^0.1.2:
   version "0.1.5"
@@ -1476,7 +1504,7 @@ engine.io@1.8.3:
     engine.io-parser "1.3.2"
     ws "1.1.2"
 
-enhanced-resolve@^3.0.0, enhanced-resolve@^3.1.0:
+enhanced-resolve@^3.0.0, enhanced-resolve@^3.1.0, enhanced-resolve@^3.3.0:
   version "3.3.0"
   resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/enhanced-resolve/-/enhanced-resolve-3.3.0.tgz#950964ecc7f0332a42321b673b38dc8ff15535b3"
   dependencies:
@@ -1923,6 +1951,10 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6:
 "graceful-readlink@>= 1.0.0":
   version "1.0.1"
   resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
+
+hammerjs@^2.0.8:
+  version "2.0.8"
+  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
 
 handle-thing@^1.2.5:
   version "1.2.5"
@@ -2993,6 +3025,13 @@ ncname@1.0.x:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+
+ng2-ace-editor@^0.2.3:
+  version "0.2.5"
+  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/ng2-ace-editor/-/ng2-ace-editor-0.2.5.tgz#3b99da834dd103f48d5ecdc695eda11324ada2d1"
+  dependencies:
+    ace-builds "^1.2.5"
+    brace "^0.9.0"
 
 no-case@^2.2.0:
   version "2.3.1"
@@ -4260,6 +4299,10 @@ silent-error@^1.0.0:
   dependencies:
     debug "^2.2.0"
 
+simplepeg@^1.2.0:
+  version "1.2.0"
+  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/simplepeg/-/simplepeg-1.2.0.tgz#a761e2821f44a482e4ee4cb0edb51704371c8c85"
+
 sntp@1.x.x:
   version "1.0.9"
   resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/sntp/-/sntp-1.0.9.tgz#6541184cc90aeea6c6e7b35e2659082443c66198"
@@ -4920,6 +4963,10 @@ void-elements@^2.0.0:
   version "2.0.1"
   resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
+w3c-blob@0.0.1:
+  version "0.0.1"
+  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/w3c-blob/-/w3c-blob-0.0.1.tgz#b0cd352a1a50f515563420ffd5861f950f1d85b8"
+
 walk-sync@^0.3.1:
   version "0.3.2"
   resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/walk-sync/-/walk-sync-0.3.2.tgz#4827280afc42d0e035367c4a4e31eeac0d136f75"
@@ -5098,16 +5145,9 @@ wrappy@1:
   version "1.0.2"
   resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
-ws@1.1.2:
+ws@1.1.2, ws@^1.0.1:
   version "1.1.2"
   resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/ws/-/ws-1.1.2.tgz#8a244fa052401e08c9886cf44a85189e1fd4067f"
-  dependencies:
-    options ">=0.0.5"
-    ultron "1.0.x"
-
-ws@^1.0.1:
-  version "1.1.4"
-  resolved "https://artifactory.iponweb.net:443/artifactory/api/npm/npm/ws/-/ws-1.1.4.tgz#57f40d036832e5f5055662a397c4de76ed66bf61"
   dependencies:
     options ">=0.0.5"
     ultron "1.0.x"
