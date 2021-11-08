@@ -1,19 +1,22 @@
-import { LanguagesService } from 'app/languages/languages.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-languages',
   templateUrl: './languages.component.html',
   styleUrls: ['./languages.component.css']
 })
-export class LanguagesComponent implements OnInit {
+export class LanguagesComponent {
 
-  constructor(
-    public languagesService: LanguagesService,
-  ) { }
-
-  ngOnInit() {
-  }
+  public languages = [
+    {
+      name: 'JavaScript',
+      github: 'https://github.com/SimplePEG/JavaScript'
+    },
+    {
+      name: 'Python',
+      github: 'https://github.com/SimplePEG/Python'
+    }
+  ]
 
   notImplemented() {
     alert('Not implemented')
