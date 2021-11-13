@@ -1,9 +1,9 @@
-<md-card *ngFor="let language of languagesService.languages" class="language">
+<mat-card *ngFor="let language of languages" class="language">
   <h1>SimplePEG - {{ language.name }}</h1>
-  <md-card-actions>
-    <button md-button (click)="goToGitHub(language)">GitHub</button>
-    <button md-button (click)="notImplemented()">Quick Start</button>
-    <button md-button (click)="notImplemented()">Documentation</button>
-  </md-card-actions>
-</md-card>
+  <mat-card-actions>
+    <button mat-button (click)="goToGitHub(language)">GitHub</button>
+    <button mat-button (click)="notImplemented()">Quick Start</button>
+    <button mat-button (click)="notImplemented()">Documentation</button>
+  </mat-card-actions>
+</mat-card>
 

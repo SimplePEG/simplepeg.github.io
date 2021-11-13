@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
 import { Router, ActivatedRoute } from '@angular/router';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/do';
 
-import {SPEG} from 'simplepeg';
+import { SPEG } from 'simplepeg';
+import { Observable, Observer } from "rxjs";
+import { tap } from "rxjs/operators";
+import { debounceTime } from 'rxjs/operators';
+
 const parser = new SPEG();
 
 @Component({
@@ -59,11 +58,11 @@ hash      ->  "#" [^ ]*;
     this.parseGrammar(this.grammar);
     this.parseText(this.text);
 
-    Observable.create((obs: Observer<string>) => this.$grammar = obs)
-      .do((grammar: string) => {
+    new Observable((obs) => this.$grammar = obs)
+      .pipe(tap((grammar: string) => {
         // block ui
-      })
-      .debounceTime(1000).subscribe((grammar: string) => {
+      }), debounceTime(1000))
+      .subscribe((grammar: string) => {
         console.log('grammar', grammar);
         this.router.navigate([], {
           queryParams: {
@@ -80,11 +79,10 @@ hash      ->  "#" [^ ]*;
         this.parseText(this.text);
       });
 
-    Observable.create((obs) => this.$text = obs)
-      .do(() => {
+    new Observable((obs) => this.$text = obs)
+      .pipe(tap((grammar: string) => {
         // block ui
-      })
-      .debounceTime(300).subscribe((text: string) => {
+      }), debounceTime(1000)).subscribe((text: string) => {
         this.router.navigate([], {
           queryParams: {
             g: encodeURIComponent(this.grammar),
